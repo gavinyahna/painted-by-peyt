@@ -7,7 +7,6 @@ import {
   Button, 
   Box 
 } from '@mui/material';
-import logo from '../logo.svg';
 
 const Home = () => {
   return (
@@ -29,12 +28,21 @@ const Home = () => {
             gap: 4
           }}
         >
-          <Typography variant="h3" component="h1" gutterBottom>
-            Welcome to Painted By Peyt
+          <Typography variant="h4" paragraph>
+            Painted By Peyt
           </Typography>
-          <Typography variant="h6" paragraph>
-            Professional Nail Art & Design
-          </Typography>
+          <Box
+            component="img"
+            src={`${process.env.PUBLIC_URL}/NailWork.jpg`}
+            alt="Nail Art Work"
+            sx={{ 
+              height: 200,
+              width: 'auto',
+              borderRadius: 2,
+              objectFit: 'cover',
+              boxShadow: 3
+            }}
+          />
           <Box sx={{ mt: 2 }}>
             <Button 
               variant="contained" 
