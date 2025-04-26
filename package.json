@@ -2,7 +2,7 @@
   "name": "painted-by-peyt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://[your-github-username].github.io/painted-by-peyt",
+  "homepage": "https://gavinyahna.github.io/painted-by-peyt",
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
