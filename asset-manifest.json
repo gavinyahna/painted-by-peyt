@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/painted-by-peyt/static/css/main.92c8d4eb.css",
+    "main.js": "/painted-by-peyt/static/js/main.092355a9.js",
+    "static/js/453.d629825d.chunk.js": "/painted-by-peyt/static/js/453.d629825d.chunk.js",
+    "index.html": "/painted-by-peyt/index.html",
+    "main.92c8d4eb.css.map": "/painted-by-peyt/static/css/main.92c8d4eb.css.map",
+    "main.092355a9.js.map": "/painted-by-peyt/static/js/main.092355a9.js.map",
+    "453.d629825d.chunk.js.map": "/painted-by-peyt/static/js/453.d629825d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92c8d4eb.css",
+    "static/js/main.092355a9.js"
+  ]
+}
