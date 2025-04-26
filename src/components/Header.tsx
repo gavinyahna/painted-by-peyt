@@ -58,7 +58,7 @@ const Header = () => {
           </Typography>
           <Box
             component="img"
-            src="/logo.png"
+            src={`${process.env.PUBLIC_URL}/Logo.png`}
             alt="Painted By Peyt Logo"
             sx={{ 
               height: 40,

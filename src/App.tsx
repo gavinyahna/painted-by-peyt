@@ -29,7 +29,7 @@ function App() {
           <Header />
           <Box
             sx={{
-              backgroundImage: 'url(/HomePageNailsCrop.jpg)',
+              backgroundImage: `url(${process.env.PUBLIC_URL}/HomePageNailsCrop.jpg)`,
               backgroundSize: 'cover',
               backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
