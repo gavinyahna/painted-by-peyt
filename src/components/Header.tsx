@@ -14,6 +14,12 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
+interface NavItem {
+  path: string;
+  label: string;
+  external?: boolean;
+}
+
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const theme = useTheme();
@@ -28,28 +34,40 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { path: '/', label: 'Home' },
-    { path: '/book', label: 'Book Appointment' },
     { path: '/gallery', label: 'Gallery' },
+    { path: '/pricing', label: 'Pricing' },
     { path: '/contact', label: 'Contact' },
   ];
 
   return (
     <AppBar position="static" sx={{ bgcolor: 'white' }}>
       <Toolbar>
-        <Typography 
-          variant="h6" 
-          component={Link} 
-          to="/"
-          sx={{ 
-            flexGrow: 1, 
-            color: 'primary.main',
-            textDecoration: 'none'
-          }}
-        >
-          Painted By Peyt
-        </Typography>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexGrow: 1 }}>
+          <Typography 
+            variant="h6" 
+            component={Link} 
+            to="/"
+            sx={{ 
+              color: 'primary.main',
+              textDecoration: 'none'
+            }}
+          >
+            Painted By Peyt
+          </Typography>
+          <Box
+            component="img"
+            src="/logo.png"
+            alt="Painted By Peyt Logo"
+            sx={{ 
+              height: 40,
+              width: 40,
+              borderRadius: 2,
+              objectFit: 'cover'
+            }}
+          />
+        </Box>
         
         {isMobile ? (
           <>
@@ -70,9 +88,12 @@ const Header = () => {
                 <MenuItem 
                   key={item.path}
                   onClick={handleClose}
-                  component={Link}
-                  to={item.path}
-                  selected={location.pathname === item.path}
+                  component={item.external ? 'a' : Link}
+                  href={item.external ? item.path : undefined}
+                  to={!item.external ? item.path : undefined}
+                  target={item.external ? '_blank' : undefined}
+                  rel={item.external ? 'noopener noreferrer' : undefined}
+                  selected={!item.external && location.pathname === item.path}
                 >
                   {item.label}
                 </MenuItem>
@@ -84,12 +105,15 @@ const Header = () => {
             {navItems.map((item) => (
               <Button 
                 key={item.path}
-                component={Link}
-                to={item.path}
+                component={item.external ? 'a' : Link}
+                href={item.external ? item.path : undefined}
+                to={!item.external ? item.path : undefined}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 color="primary"
                 sx={{
-                  fontWeight: location.pathname === item.path ? 'bold' : 'normal',
-                  borderBottom: location.pathname === item.path ? 2 : 0
+                  fontWeight: !item.external && location.pathname === item.path ? 'bold' : 'normal',
+                  borderBottom: !item.external && location.pathname === item.path ? 2 : 0
                 }}
               >
                 {item.label}

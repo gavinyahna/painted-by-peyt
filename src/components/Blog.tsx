@@ -41,7 +41,10 @@ const Blog = () => {
         component="h1" 
         align="center" 
         gutterBottom
-        sx={{ mb: 6 }}
+        sx={{ 
+          mb: 6,
+          color: 'primary.main'
+        }}
       >
         Latest Nail Art Blog Posts
       </Typography>
